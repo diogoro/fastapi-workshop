@@ -1,47 +1,47 @@
-# project_name
+# fastapi_workshop
 
-[![codecov](https://codecov.io/gh/author_name/project_urlname/branch/main/graph/badge.svg?token=project_urlname_token_here)](https://codecov.io/gh/author_name/project_urlname)
-[![CI](https://github.com/author_name/project_urlname/actions/workflows/main.yml/badge.svg)](https://github.com/author_name/project_urlname/actions/workflows/main.yml)
+[![codecov](https://codecov.io/gh/diogoro/fastapi-workshop/branch/main/graph/badge.svg?token=fastapi-workshop_token_here)](https://codecov.io/gh/diogoro/fastapi-workshop)
+[![CI](https://github.com/diogoro/fastapi-workshop/actions/workflows/main.yml/badge.svg)](https://github.com/diogoro/fastapi-workshop/actions/workflows/main.yml)
 
-project_description
+Awesome fastapi_workshop created by diogoro
 
 ## Install
 
 
 ### Running on gitpod
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/author_name/project_urlname)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/diogoro/fastapi-workshop)
 
 ### from source
 ```bash
-git clone https://github.com/author_name/project_urlname project_name
-cd project_name
+git clone https://github.com/diogoro/fastapi-workshop fastapi_workshop
+cd fastapi_workshop
 make install
 ```
 
 ## Executing
 
 ```bash
-$ project_name run --port 8080
+$ fastapi_workshop run --port 8080
 ```
 
 or
 
 ```bash
-python -m project_name run --port 8080
+python -m fastapi_workshop run --port 8080
 ```
 
 or
 
 ```bash
-$ uvicorn project_name:app
+$ uvicorn fastapi_workshop:app
 ```
 
 ## CLI
 
 ```bash
-❯ project_name --help
-Usage: project_name [OPTIONS] COMMAND [ARGS]...
+❯ fastapi_workshop --help
+Usage: fastapi_workshop [OPTIONS] COMMAND [ARGS]...
 
 Options:
   --install-completion [bash|zsh|fish|powershell|pwsh]
@@ -60,8 +60,8 @@ Commands:
 ### Creating a user
 
 ```bash
-❯ project_name create-user --help
-Usage: project_name create-user [OPTIONS] USERNAME PASSWORD
+❯ fastapi_workshop create-user --help
+Usage: fastapi_workshop create-user [OPTIONS] USERNAME PASSWORD
 
   Create user
 
@@ -77,7 +77,7 @@ Options:
 **IMPORTANT** To create an admin user on the first run:
 
 ```bash
-project_name create-user admin admin --superuser
+fastapi_workshop create-user admin admin --superuser
 ```
 
 ### The Shell
@@ -85,7 +85,7 @@ project_name create-user admin admin --superuser
 You can enter an interactive shell with all the objects imported.
 
 ```bash
-❯ project_name shell       
+❯ fastapi_workshop shell       
 Auto imports: ['app', 'settings', 'User', 'engine', 'cli', 'create_user', 'select', 'session', 'Content']
 
 In [1]: session.query(Content).all()
@@ -99,12 +99,12 @@ Out[3]: [Content(text='string', title='string', created_time='2021-09-14T19:25:0
 
 ## API
 
-Run with `project_name run` and access http://127.0.0.1:8000/docs
+Run with `fastapi_workshop run` and access http://127.0.0.1:8000/docs
 
 ![](https://raw.githubusercontent.com/rochacbruno/fastapi-project-template/master/docs/api.png)
 
 
-**For some api calls you must authenticate** using the user created with `project_name create-user`.
+**For some api calls you must authenticate** using the user created with `fastapi_workshop create-user`.
 
 ## Testing
 
@@ -137,18 +137,18 @@ tests/test_user_api.py::test_user_create PASSED                           [100%]
 ----------- coverage: platform linux, python 3.9.6-final-0 -----------
 Name                              Stmts   Miss  Cover
 -----------------------------------------------------
-project_name/__init__.py              4      0   100%
-project_name/app.py                  16      1    94%
-project_name/cli.py                  21      0   100%
-project_name/config.py                5      0   100%
-project_name/db.py                   10      0   100%
-project_name/models/__init__.py       0      0   100%
-project_name/models/content.py       47      1    98%
-project_name/routes/__init__.py      11      0   100%
-project_name/routes/content.py       52     25    52%
-project_name/routes/security.py      15      1    93%
-project_name/routes/user.py          52     26    50%
-project_name/security.py            103     12    88%
+fastapi_workshop/__init__.py              4      0   100%
+fastapi_workshop/app.py                  16      1    94%
+fastapi_workshop/cli.py                  21      0   100%
+fastapi_workshop/config.py                5      0   100%
+fastapi_workshop/db.py                   10      0   100%
+fastapi_workshop/models/__init__.py       0      0   100%
+fastapi_workshop/models/content.py       47      1    98%
+fastapi_workshop/routes/__init__.py      11      0   100%
+fastapi_workshop/routes/content.py       52     25    52%
+fastapi_workshop/routes/security.py      15      1    93%
+fastapi_workshop/routes/user.py          52     26    50%
+fastapi_workshop/security.py            103     12    88%
 -----------------------------------------------------
 TOTAL                               336     66    80%
 
@@ -170,7 +170,7 @@ make fmt   # formats the code
 This project uses [Dynaconf](https://dynaconf.com) to manage configuration.
 
 ```py
-from project_name.config import settings
+from fastapi_workshop.config import settings
 ```
 
 ## Acessing variables
@@ -199,7 +199,7 @@ dynaconf_merge = true
 echo = true
 ```
 
-> `dynaconf_merge` is a boolean that tells if the settings should be merged with the default settings defined in project_name/default.toml.
+> `dynaconf_merge` is a boolean that tells if the settings should be merged with the default settings defined in fastapi_workshop/default.toml.
 
 ### As environment variables
 ```bash
@@ -220,7 +220,7 @@ can read those variables.
 ### Switching environments
 
 ```bash
-PROJECT_NAME_ENV=production project_name run
+PROJECT_NAME_ENV=production fastapi_workshop run
 ```
 
 Read more on https://dynaconf.com

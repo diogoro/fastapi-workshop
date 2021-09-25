@@ -1,5 +1,5 @@
 """
-project_name base module.
+fastapi_workshop base module.
 """
 from fastapi import FastAPI
 

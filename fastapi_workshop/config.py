@@ -5,10 +5,10 @@ from dynaconf import Dynaconf
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 settings = Dynaconf(
-    envvar_prefix="project_name",
+    envvar_prefix="fastapi_workshop",
     preload=[os.path.join(HERE, "default.toml")],
     settings_files=["settings.toml", ".secrets.toml"],
     environments=["development", "production", "testing"],
-    env_switcher="project_name_env",
+    env_switcher="fastapi_workshop_env",
     load_dotenv=False,
 )
